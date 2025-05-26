@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>День <%= challenge.day %>: <%= challenge.title %></title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <h1>7 дней кодинга 🚀</h1>
+    <div>
+      <p>Ты молодец, что дошёл до этого дня! 💥 Продолжай кодить, и мир покорится тебе! 🌍👨‍💻</p>
+      <p>Каждая строка кода — это шаг к успеху! ✨</p>
+    </div>
+  </header>
+  <main>
+    <h2>📅 День <%= challenge.day %>: <%= challenge.title %></h2>
+
+    <form method="POST" action="/challenge/<%= challenge.day %>/submit">
+      <label for="name">👤 Ваше имя:</label>
+      <input type="text" name="name" id="name" required placeholder="Введите ваше имя">
+      <br><br>
+
+      <textarea name="code" rows="15" cols="80">
+# Задание:
+# <%= challenge.description %>
+#
+# Пример ввода:
+# <%= challenge.sample_input %>
+#
+# Ожидаемый вывод:
+# <%= challenge.expected_output %>
+
+# 💡 Напиши свой код ниже:
+      </textarea>
+      <br><br>
+      <button type="submit">🚀 Отправить</button>
+    </form>
+
+    <br>
+    <a href="/" class="back-button">🔙 Назад</a>
+  </main>
+</body>
+</html>

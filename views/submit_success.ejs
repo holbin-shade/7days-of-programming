@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Решение для задачи День <%= challenge.day %> получено!</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header class="header-success">
+    <h1 class="title-success">7 дней кодинга 🚀</h1>
+  </header>
+  <main class="main-success">
+    <h2 class="success-heading">✅ Отлично! Задача дня <%= challenge.day %> успешно решена! 🎉</h2>
+
+    <p class="success-message">
+      Ваше решение для задачи <strong><%= challenge.title %></strong> было успешно отправлено и прошло проверку. Так держать! 💪✨
+    </p>
+
+    <p>Продолжай в том же духе — впереди ещё много интересных задач! 🧑‍💻🔥</p>
+    
+    <br>
+    <a href="/" class="back-button">⬅ Назад к заданиям</a>
+  </main>
+</body>
+</html>

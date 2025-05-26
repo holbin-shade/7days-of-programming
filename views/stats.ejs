@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Статистика</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <h1>7 дней кодинга - Статистика 📊</h1>
+    <div>
+      <p>🔥 Отличная работа! Ты уже прошёл часть пути. Продолжай в том же духе!</p>
+      <p>💡 Помни: даже одна строка кода в день — это шаг вперёд к мастерству!</p>
+      <p>🚀 Ты становишься сильнее с каждым заданием!</p>
+    </div>
+  </header>
+  <main>
+    <h2>✅ Вы прошли <%= daysCompleted %> из 7 дней</h2>
+    <ul>
+      <% challenges.forEach(challenge => { %>
+        <li class="<%= challenge.completed === 1 ? 'completed' : '' %>">
+          🗓️ День <%= challenge.day %>: <%= challenge.title %> 
+          <%= challenge.completed === 1 ? '✔️ (Пройдено)' : '❌ (Не пройдено)' %>
+          <% if (challenge.completed === 1 && challenge.user_name) { %>
+            – Решено: <%= challenge.user_name %> 🎉
+          <% } %>
+        </li>
+      <% }); %>
+    </ul>
+
+    <br>
+    <p style="text-align: center;"><a href="/" class="back-button">🔙 Назад к заданиям</a></p>
+  </main>
+</body>
+</html>
