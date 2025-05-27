@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>7 дней кодинга</title>
-  <link rel="stylesheet" href="/styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
   <header>
     <h1>7 дней кодинга 🚀</h1>
+    <nav style="margin-bottom: 10px;">
+      <a href="/">🏠 Главная</a> |
+      <% if (user) { %>
+        <span>Привет, <strong><%= user.username %></strong>!</span> |
+        <a href="/logout">🚪 Выйти</a>
+      <% } else { %>
+        <a href="/register">📝 Регистрация</a> |
+        <a href="/login">🔑 Войти</a>
+      <% } %>
+    </nav>
+
     <div>
       <p>Ты на верном пути! 💪 Не сдавайся — каждый день ты становишься сильнее как разработчик! 💻🔥</p>
       <p>Пусть твой код будет чистым, как свежий коммит! 😎👨‍💻</p>
     </div>
   </header>
-  <main>
-    <h2>📋 Список заданий</h2>
-    <ul>
-      <% challenges.forEach(challenge => { %>
-        <li class="<%= challenge.completed === 1 ? 'completed' : '' %>">
-          <strong>День <%= challenge.day %>:</strong>
-          <% if (challenge.completed === 1) { %>
-            <span><%= challenge.title %></span>
-            <span class="status">✅ (Пройдено)</span>
-          <% } else { %>
-            <a href="/challenge/<%= challenge.day %>"><%= challenge.title %></a>
-            <span class="status">🚧 (Не пройдено)</span>
-          <% } %>
-        </li>
-      <% }) %>
-    </ul>
 
-    <p style="text-align: center;">
-      <a href="/stats">📊 Перейти к статистике</a>
-    </p>
+  <main>
+    <% if (user) { %>
+      <h2>📋 Список заданий</h2>
+      <ul>
+        <% challenges.forEach(challenge => { %>
+          <li class="<%= challenge.completed === 1 ? 'completed' : '' %>">
+            <strong>День <%= challenge.day %>:</strong>
+            <% if (challenge.completed === 1) { %>
+              <span><%= challenge.title %></span>
+              <span class="status">✅ (Пройдено)</span>
+            <% } else { %>
+              <a href="/challenge/<%= challenge.day %>"><%= challenge.title %></a>
+              <span class="status">🚧 (Не пройдено)</span>
+            <% } %>
+          </li>
+        <% }) %>
+      </ul>
+
+      <p style="text-align: center;">
+        <a href="/stats">📊 Перейти к статистике</a>
+      </p>
+    <% } else { %>
+      <h2>👋 Приветствую!</h2>
+      <p>Пожалуйста, <a href="/login">войдите</a> или <a href="/register">зарегистрируйтесь</a>, чтобы увидеть список заданий.</p>
+    <% } %>
   </main>
 </body>
 </html>

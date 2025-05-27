@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Вход — 7 дней кодинга</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <header>
+        <h1>🚀 7 дней кодинга</h1>
+        <nav>
+          <a href="/">🏠 Главная</a> |
+          <a href="/register">📝 Регистрация</a> |
+          <a href="/login">🔑 Войти</a>
+        </nav>
+        <div class="motivation">
+          <p>💪 Ты молодец, что дошёл до этого дня! Продолжай кодить, и мир покорится тебе! 🌍👨‍💻</p>
+          <p>✨ Каждая строка кода — это шаг к успеху! Не сдавайся и двигайся вперёд!</p>
+        </div>
+      </header>
+
+  <main>
+    <h2>🔑 Вход</h2>
+
+    <form method="POST" action="/login">
+      <label for="username">👤 Имя пользователя:</label><br />
+      <input type="text" id="username" name="username" required placeholder="Введите имя пользователя" /><br /><br />
+
+      <label for="password">🔒 Пароль:</label><br />
+      <input type="password" id="password" name="password" required placeholder="Введите пароль" /><br /><br />
+
+      <button type="submit">🚀 Войти</button>
+    </form>
+
+    <p>Нет аккаунта? <a href="/register">Зарегистрироваться 📝</a></p>
+  </main>
+</body>
+</html>
